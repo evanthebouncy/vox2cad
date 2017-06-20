@@ -21,6 +21,9 @@ def gen_prog1(N):
 # takes in a union of circles and squares render into
 # a voxel field
 def render_prog1(shapes):
+  # in case we have no shapes to speak of
+  if shapes == []:
+    return np.zeros((L,L,L), dtype=bool)
   voxels = []
   for s in shapes:
     typo, params = s[0], s[1:]
